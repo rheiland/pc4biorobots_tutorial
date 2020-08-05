@@ -12,7 +12,7 @@ From the Jupyter notebook on nanoHUB, download/build/demo the pc4biorobots GUI
 !wget https://github.com/rheiland/pc4biorobots/archive/v1.1.zip
 !unzip -o v1.1.zip
 import os
-os.chdir('pc4biorobots-1.1')
+os.chdir('pc4biorobots-1.1/src')
 os.listdir()
 !make
 import shutil
