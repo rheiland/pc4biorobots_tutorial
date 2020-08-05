@@ -4,3 +4,43 @@ From the Jupyter notebook on nanoHUB, download/build/demo the pc4biorobots GUI
 * If you don't have a nanoHUB account, create one (https://nanohub.org/register/)
 * Launch the tool: https://nanohub.org/tools/jupyter51
 * Create a new notebook with Python 3 (shown in screenshot)
+![](/images/python3_nb.png)
+* this creates an empty notebook with a single input "cell"
+![](/images/python3_nb_cell1.png)
+* copy the following Python code and paste it into the input cell
+```
+!wget https://github.com/rheiland/pc4biorobots/archive/v1.1.zip
+!unzip -o v1.1.zip
+import os
+os.chdir('pc4biorobots-1.1')
+os.listdir()
+!make
+import shutil
+shutil.copy('myproj','../bin')
+os.chdir('..')
+```
+* this should download and compile the C++ code and put the `myproj` executable to where it belongs
+* copy the following Python code and paste it into the next input cell
+```
+style = """
+    <style>
+       .jupyter-widgets-output-area .output_scroll {
+            height: unset !important;
+            border-radius: unset !important;
+            -webkit-box-shadow: unset !important;
+            box-shadow: unset !important;
+        }
+        .jupyter-widgets-output-area  {
+            height: auto !important;
+            width: 100%; !important;
+        }
+    </style>
+""" 
+%matplotlib inline
+from IPython.core.display import display, HTML
+display(HTML(style))
+import sys, os
+sys.path.insert(0, os.path.abspath('bin'))
+import pc4biorobots
+pc4biorobots.gui
+```
