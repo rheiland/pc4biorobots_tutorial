@@ -4,10 +4,15 @@ From the Jupyter notebook on nanoHUB, download/build/demo the pc4biorobots GUI
 * If you don't have a nanoHUB account, create one (https://nanohub.org/register/)
 * Launch the tool: https://nanohub.org/tools/jupyter51
 * Create a new notebook with Python 3 (shown in screenshot)
+
 ![](/images/python3_nb.png)
+
 * this creates an empty notebook with a single input "cell"
+
 ![](/images/python3_nb_cell1.png)
+
 * Copy the following Python code and paste it into the input cell. This should download everything needed for the `pc4biorobots` app, compile the C++ code, and copy the `myproj` executable to where it belongs for the `Run` button
+
 ```
 !wget https://github.com/rheiland/pc4biorobots/archive/v1.1.zip
 !unzip -o v1.1.zip
@@ -21,6 +26,7 @@ os.chdir('..')
 ```
 
 * Copy the following Python code and paste it into the next input cell.
+
 ```
 style = """
     <style>
@@ -44,6 +50,7 @@ sys.path.insert(0, os.path.abspath('bin'))
 import pc4biorobots
 pc4biorobots.gui
 ```
+
 * this should display the GUI, let you 'Run' the model (from the `Config Basics` tab): 
 
 ![](/images/config_basics_Run.png)
