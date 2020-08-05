@@ -11,7 +11,7 @@ From the Jupyter notebook on nanoHUB, download/build/demo the pc4biorobots GUI
 
 ![](/images/python3_nb_cell1.png)
 
-* Copy the following Python code and paste it into the input cell. This should download everything needed for the `pc4biorobots` app, compile the C++ code, and copy the `myproj` executable to where it belongs for the `Run` button
+* Copy the following Python code and paste it into the input cell. This should download everything needed for the `pc4biorobots` app and compile the C++ code: 
 
 ```
 !wget https://github.com/rheiland/pc4biorobots/archive/v1.1.zip
@@ -20,6 +20,11 @@ import os
 os.chdir('pc4biorobots-1.1/src')
 os.listdir()
 !make
+```
+
+* Assuming the compilation is successful, creating the `myproj` executable, copy/paste the following into the next cell to copy `myproj` to where it belongs for the `Run` button
+
+```
 import shutil
 shutil.copy('myproj','../bin')
 os.chdir('..')
