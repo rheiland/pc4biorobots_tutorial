@@ -19,7 +19,7 @@ import shutil
 shutil.copy('myproj','../bin')
 os.chdir('..')
 ```
-* 
+
 * Copy the following Python code and paste it into the next input cell.
 ```
 style = """
