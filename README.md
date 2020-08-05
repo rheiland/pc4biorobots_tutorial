@@ -44,6 +44,11 @@ sys.path.insert(0, os.path.abspath('bin'))
 import pc4biorobots
 pc4biorobots.gui
 ```
-* this should display the GUI and let you 'Run' the model and display results.
+* this should display the GUI, let you 'Run' the model (from the `Config Basics` tab): 
+
+![](/images/config_basics_Run.png)
+
+* and let you interactively display results (from the `Out: Plots` tab)
+
 ![](/images/pc4biorobots_GUI.png)
 
